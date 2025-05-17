@@ -1,7 +1,7 @@
  CC = gcc
 CFLAGS = -Wall -Wextra -Iinclude
 
-SRC = src/container.c src/data_structures.c
+SRC = src/container.c src/data_structures.c src/my_stdio.c
 OBJ = $(SRC:.c=.o)
 
 # Default target

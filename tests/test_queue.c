@@ -1,5 +1,5 @@
 #include "../include/container.h"
-#include <stdio.h>
+#include "../include/my_stdio.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -12,7 +12,7 @@ int main() {
         queue_int_enqueue(qi, i);
     }
     while (!queue_int_is_empty(qi)) {
-        printf("Front: %d\n", queue_int_front(qi));
+        my_printf("Front: %d\n", queue_int_front(qi));
         queue_int_dequeue(qi);
     }
     queue_int_destroy(qi);
@@ -23,7 +23,7 @@ int main() {
         queue_float_enqueue(qf, x);
     }
     while (!queue_float_is_empty(qf)) {
-        printf("Front: %.2f\n", queue_float_front(qf));
+        my_printf("Front: %f\n", queue_float_front(qf));
         queue_float_dequeue(qf);
     }
     queue_float_destroy(qf);

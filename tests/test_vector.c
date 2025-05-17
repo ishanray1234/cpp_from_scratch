@@ -1,5 +1,5 @@
 #include "../include/container.h"
-#include <stdio.h>
+#include <../include/my_stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -10,7 +10,7 @@ DEFINE_VECTOR_FUNCTIONS(char*, vector_str)
 
 int main() {
     // === TESTING vector_int ===
-    printf("Testing vector_int:\n");
+    my_printf("Testing vector_int:\n");
     Vector *vi = vector_int_create();
     for (int i = 0; i < 5; i++) {
         int *val = (int*)malloc(sizeof(int));
@@ -19,20 +19,20 @@ int main() {
     }
 
     for (size_t i = 0; i < vec_size((Vector *)vi); i++) {
-        printf("vi[%zu] = %d\n", i, vector_int_get(vi, i));
+        my_printf("vi[%d] = %d\n", i, vector_int_get(vi, i));
     }
 
     vec_remove((Vector *)vi, 2); // remove the 3rd element
-    printf("After removal:\n");
+    my_printf("After removal:\n");
     for (size_t i = 0; i < vec_size((Vector *)vi); i++) {
-        printf("vi[%zu] = %d\n", i, vector_int_get(vi, i));
+        my_printf("vi[%d] = %d\n", i, vector_int_get(vi, i));
     }
 
     vector_int_destroy(vi);
 
 
     // === TESTING vector_float ===
-    printf("\nTesting vector_float:\n");
+    my_printf("\nTesting vector_float:\n");
     Vector *vf = vector_float_create();
     for (int i = 0; i < 3; i++) {
         float *fval = (float*)malloc(sizeof(float));
@@ -41,14 +41,14 @@ int main() {
     }
 
     for (size_t i = 0; i < vec_size((Vector *)vf); i++) {
-        printf("vf[%zu] = %.2f\n", i, vector_float_get(vf, i));
+        my_printf("vf[%d] = %f\n", i, vector_float_get(vf, i));
     }
 
     vector_float_destroy(vf);
 
 
     // === TESTING vector_str ===
-    printf("\nTesting vector_str:\n");
+    my_printf("\nTesting vector_str:\n");
     Vector *vs = vector_str_create();
 
     const char *words[] = {"hello", "world", "C", "vectors"};
@@ -58,13 +58,13 @@ int main() {
     }
 
     for (size_t i = 0; i < vec_size((Vector *)vs); i++) {
-        printf("vs[%zu] = %s\n", i, vector_str_get(vs, i));
+        my_printf("vs[%d] = %s\n", i, vector_str_get(vs, i));
     }
 
     vec_remove((Vector *)vs, 1); // remove "world"
-    printf("After removal:\n");
+    my_printf("After removal:\n");
     for (size_t i = 0; i < vec_size((Vector *)vs); i++) {
-        printf("vs[%zu] = %s\n", i, vector_str_get(vs, i));
+        my_printf("vs[%d] = %s\n", i, vector_str_get(vs, i));
     }
 
     vector_str_destroy(vs);

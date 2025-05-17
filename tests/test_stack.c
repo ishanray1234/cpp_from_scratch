@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "../include/my_stdio.h"
 #include "../include/container.h"
 
 
@@ -10,7 +10,7 @@ int main() {
     stack_push(s, 3);
 
     while (!stack_is_empty(s)) {
-        printf("Popped: %d\n", stack_pop(s));
+        my_printf("Popped: %d\n", stack_pop(s));
     }
 
     stack_free(s);

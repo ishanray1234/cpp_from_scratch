@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "../include/my_stdio.h"
 #include "../include/data_structures.h"
 
 
@@ -13,11 +13,11 @@ int main() {
     set_add(s, 60);
     set_add(s, 80);
 
-    printf("Contains 60: %d\n", set_contains(s, 60));
-    printf("Contains 25: %d\n", set_contains(s, 25));
+    my_printf("Contains 60: %d\n", set_contains(s, 60));
+    my_printf("Contains 25: %d\n", set_contains(s, 25));
 
     set_remove(s, 70);
-    printf("Contains 70 after removal: %d\n", set_contains(s, 70));
+    my_printf("Contains 70 after removal: %d\n", set_contains(s, 70));
 
     set_free(s);
     return 0;
